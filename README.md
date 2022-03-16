@@ -1,2 +1,2 @@
 # PDI
- Disciplina Processamento de Imagens Digitais do Programa de Pós Graduação em Ciências da Computação - UNESP
+ Disciplina: Processamento Digital de Imagens do Programa de Pós Graduação em Ciências da Computação - UNESP
