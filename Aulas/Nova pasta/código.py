@@ -2,13 +2,26 @@
 """
 Created on Sat Apr  2 11:22:41 2022
 
-@author: halin
+@author: Haline Dugolin Ceccato
+
+Projeto desenvolvido na disciplina de Processamento Digital de Imagens - PDI
+Aluna especial na Pós Graduação em Ciências da Computação - UNESP
 """
+
+"""
+O respectivo programa tem como objetivo reproduzir cinco imagens 
+com dimensões 256x256 com 256 níveis de profundidade.
+
+"""
+
+#Para executar o programa é necessário os seguintes pacotes:
 
 import re
 import numpy as np
 from matplotlib import pyplot as plt
 from PIL import Image
+
+a = np.arange(200,200)
 
 #Mostrar de um arquivo:
 def mostrarImagemDoArquivo (a):
@@ -21,15 +34,15 @@ def mostrarImagemDoArquivo (a):
         plt.imshow(ni, cmap='gray')
         plt.show()
 
-def mostrarImagem(mapa, save = False, path = "", animation = False, index = 0, direction = ""):
-     ni = np.array(mapa)
-     plt.imshow(ni, cmap='gray')
-     if save == False:
-         plt.show()
-     if save == True and animation == False:
-         plt.savefig(pathToSave.format("output.png"))
-     if save == True and animation == True:
-         plt.savefig(pathToSave.format(str(index) + "Fig" + direction + ".png"))
+#def mostrarImagem(mapa, save = False, path = "", animation = False, index = 0, direction = ""):
+     #ni = np.array(mapa)
+     #plt.imshow(ni, cmap='gray')
+     #if save == False:
+         #plt.show()
+     #if save == True and animation == False:
+         #plt.savefig(pathToSave.format("output.png"))
+     #if save == True and animation == True:
+         #plt.savefig(pathToSave.format(str(index) + "Fig" + direction + ".png"))
 
 mp = [0,0,0,0,0,0,0,0,0,0,0,0]
 mapa = []
@@ -43,7 +56,7 @@ mapa.append(mp)
 mapa.append(mp)
 
 # mostra a imagem
-mostrarImagem(mapa)
+#mostrarImagem(mapa)
 
 mp = [10,10,10,10,10,10,10,10,10,10,10,10]
 mp2 = [0,0,0,0,0,0,0,0,0,0,0,0]
@@ -58,7 +71,7 @@ mapa.append(mp)
 mapa.append(mp3)
 mapa.append(mp2)
 
-mostrarImagem(mapa)
+#mostrarImagem(mapa)
 
 
 def criarImagem(altura, largura, pontosDeCinza):
@@ -71,52 +84,52 @@ def criarImagem(altura, largura, pontosDeCinza):
     return img
 
 ## testa criando uma imagem 50x50
-imagem = criarImagem(20,20,15)
-mostrarImagem(imagem)
+#imagem = criarImagem(20,20,15)
+#mostrarImagem(imagem)
 
 import numpy as np
 def escrevePonto(imagem,x,y,pontosDeCinza):
      img = np.array(imagem)
      img[y,x] = pontosDeCinza
      return img
-imagem = escrevePonto(imagem,6,5,15)
-mostrarImagem(imagem)
+#imagem = escrevePonto(imagem,6,5,15)
+#mostrarImagem(imagem)
 
 ###coletando os dados da matriz, para gerar a figura:
-M = Image.open('a.jpg')
+M = Image.open('c.jpg')
 M = np.asanyarray(M, dtype= np.float32)
 print(M)
 #transformando a matriz em imagem:
 image = Image.fromarray(M)
 image.show()
 
-M = Image.open('b.jpg')
-M = np.asanyarray(M, dtype= np.float32)
-print(M)
+# M = Image.open('b.jpg')
+# M = np.asanyarray(M, dtype= np.float32)
+# print(M)
 
-image = Image.fromarray(M)
-image.show()
+# image = Image.fromarray(M)
+# image.show()
 
-M = Image.open('c.jpg')
-M = np.asanyarray(M, dtype= np.float32)
-print(M)
+# M = Image.open('c.jpg')
+# M = np.asanyarray(M, dtype= np.float32)
+# print(M)
 
-image = Image.fromarray(M)
-image.show()
+# image = Image.fromarray(M)
+# image.show()
 
-M = Image.open('d.jpg')
-M = np.asanyarray(M, dtype= np.float32)
-print(M)
+# M = Image.open('d.jpg')
+# M = np.asanyarray(M, dtype= np.float32)
+# print(M)
 
-image = Image.fromarray(M)
-image.show()
+# image = Image.fromarray(M)
+# image.show()
 
-M = Image.open('e.jpg')
-M = np.asanyarray(M, dtype= np.float32)
-print(M)
+# M = Image.open('e.jpg')
+# M = np.asanyarray(M, dtype= np.float32)
+# print(M)
 
-image = Image.fromarray(M)
-image.show()
+# image = Image.fromarray(M)
+# image.show()
 
 
 
